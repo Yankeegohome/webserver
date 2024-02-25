@@ -13,7 +13,8 @@ func Start(config *Config) error {
 		return err
 	}
 	defer db.Close()
-	return http.ListenAndServe(config.BindAddr, nil)
+	srv := newServer()
+	return http.ListenAndServe(config.BindAddr, srv)
 }
 
 func NewDB(databaseURL string) (*sql.DB, error) {
