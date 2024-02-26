@@ -5,6 +5,7 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 	"log/slog"
 	"net/http"
+	"web/iternal/app/sqlapp"
 )
 
 func Start(config *Config) error {
@@ -13,7 +14,8 @@ func Start(config *Config) error {
 		return err
 	}
 	defer db.Close()
-	srv := newServer()
+	app := sqlapp.New(db)
+	srv := newServer(app)
 	return http.ListenAndServe(config.BindAddr, srv)
 }
 

@@ -39,4 +39,4 @@ func main() {
 	fmt.Println("migrations applied successfully")
 }
 
-// go run ./cmd/migrator --storage-path=jdbc:sqlite:identifier.sqlite --migrations-path=./migrations
+// go run ./cmd/migrator --storage-path=./storage/storage.db --migrations-path=./migrations
