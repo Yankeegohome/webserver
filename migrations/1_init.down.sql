@@ -1,1 +1,6 @@
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS lab_sample;
+DROP TABLE IF EXISTS lab_research;
+DROP TABLE IF EXISTS specimen;
+
+
